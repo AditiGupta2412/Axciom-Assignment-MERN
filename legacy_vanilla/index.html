@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <!-- Premium Design System -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Browser Tab Icon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+</head>
+<body>
+
+    <!-- Main Entry Point for our Single Page Application -->
+    <div id="app"></div>
+
+    <!-- Application Logic Modules -->
+    <!-- 1. Data Layer (LocalStorage & CRUD) -->
+    <script src="data.js"></script>
+
+    <!-- 2. Transaction Screens (Issue, Return, Search, Fine) -->
+    <script src="transactions.js"></script>
+
+    <!-- 3. Report Viewing Screens -->
+    <script src="reports.js"></script>
+
+    <!-- 4. Administrative Maintenance Screens -->
+    <script src="maintenance.js"></script>
+
+    <!-- 5. Core Router & Layout Logic -->
+    <script src="app.js"></script>
+
+    <!-- App Initialization -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Seed localStorage with base data if empty
+            DB.init(); 
+            
+            // Navigate to initial page
+            navigate('login');
+        });
+    </script>
+
+</body>
+</html>
